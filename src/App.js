@@ -5,15 +5,16 @@ import Work from "./Components/Work";
 import Testimonial from "./Components/Testimonial";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
+import Foods from "./Components/Foods";
 
 function App() {
   return (
     <div className="App">
       <Home />
       <About />
+      <Foods/>
       <Work />
       <Testimonial />
-      <Contact />
       <Footer />
     </div>
   );

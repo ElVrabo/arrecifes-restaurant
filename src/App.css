@@ -289,6 +289,11 @@ nav {
   border-radius: 1rem;
   color: #505050;
   margin: 1rem 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.work-section-info:hover{
+  /* cursor: pointer; */
+    transform: scale(1.1);
 }
 .work-section-info h2 {
   margin: 1rem 0rem;
@@ -305,6 +310,10 @@ nav {
   display: flex;
   align-items: center;
   font-weight: 600;
+}
+.logo{
+  font-size: 40px;
+  color: #fe9e0d;
 }
 
 @media (max-width: 1000px) {

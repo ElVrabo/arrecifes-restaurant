@@ -16,45 +16,47 @@ import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
-
+import { Zoom } from "react-reveal";
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const menuOptions = [
     {
-      text: "Home",
+      text: "Inicio",
+      href:"#",
       icon: <HomeIcon />,
     },
     {
-      text: "About",
+      text: "Acerca de",
+      href:"#about",
       icon: <InfoIcon />,
     },
     {
-      text: "Testimonials",
+      text: "Testimonios",
+      href:"#testimonials",
       icon: <CommentRoundedIcon />,
     },
     {
-      text: "Contact",
+      text: "Contacto",
+      href:"#footer",
       icon: <PhoneRoundedIcon />,
-    },
-    {
-      text: "Cart",
-      icon: <ShoppingCartRoundedIcon />,
     },
   ];
   return (
-    <nav>
+    <Zoom>
+      <nav>
       <div className="nav-logo-container">
-        <img src={Logo} alt="" />
+        <h1 className="logo" >Arrecifes</h1>
       </div>
       <div className="navbar-links-container">
-        <a href="">Home</a>
-        <a href="">About</a>
-        <a href="">Testimonials</a>
-        <a href="">Contact</a>
-        <a href="">
+        <a href="">Inicio</a>
+        <a href="#about">Acerca de</a>
+        <a href="#dishes">Platillos</a>
+        <a href="#testimonials">Testimonios</a>
+        <a href="#footer">Contacto</a>
+        {/* <a href="">
           <BsCart2 className="navbar-cart-icon" />
-        </a>
-        <button className="primary-button">Bookings Now</button>
+        </a> */}
+        {/* <button className="primary-button">Bookings Now</button> */}
       </div>
       <div className="navbar-menu-container">
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
@@ -71,7 +73,8 @@ const Navbar = () => {
               <ListItem key={item.text} disablePadding>
                 <ListItemButton>
                   <ListItemIcon>{item.icon}</ListItemIcon>
-                  <ListItemText primary={item.text} />
+                  <a style={{textDecoration:"none", color:"#515151"}} href={item.href} >{item.text}</a>
+                  {/* <ListItemText primary={item.text} /> */}
                 </ListItemButton>
               </ListItem>
             ))}
@@ -80,6 +83,8 @@ const Navbar = () => {
         </Box>
       </Drawer>
     </nav>
+    </Zoom>
+   
   );
 };
 
